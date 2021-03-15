@@ -174,8 +174,8 @@ const respond = async (request: ServerRequest): Promise<Response> => {
         const response = successResponse()
 
         // TODO: HTTPOnly? Secure? Signed? JWT?
-        const cookie: Cookie = {name: 'playerName', value: player.name}
-        setCookie(response, cookie)
+        //const cookie: Cookie = {name: 'playerName', value: player.name}
+        //setCookie(response, cookie)
 
         return response
     }

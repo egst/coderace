@@ -2,6 +2,10 @@ import {prefixed} from '/src/config.js'
 
 window.cookies = {}
 
+const setCookie = (name, value = '') => {
+    document.cookie = `${name}=${value}; path=/`
+}
+
 const updateCookies = () => window.cookies =
     Object.fromEntries(document.cookie.split(';').map(entry => {
         const parts = entry.split('=').map(part => part.trim())
@@ -16,7 +20,9 @@ const clearCookies = () => {
 
 updateCookies()
 
-const serverUrl = 'http://localhost:9011/'
+const serverUrl = location.hostname == 'localhost'
+    ? 'http://localhost:9011'
+    : `${location.protocol}//server.${location.hostname}/`
 
 const request = async (params, errorHandler = null) => {
     try {
@@ -81,12 +87,13 @@ export class Status extends HTMLElement {
             this.joining = true
             const playerName = prompt('Join as...')
             await api.join({playerName})
+            setCookie('playerName', playerName)
             this.joining = false
         } else {
             const playerName = window.cookies.playerName
             await api.rejoin({playerName}, () => {
                 clearCookies()
-                window.coderace.alert.warn('logged out')
+                window.coderace.alert.warn('Left.')
                 //this.auth()
             })
         }
