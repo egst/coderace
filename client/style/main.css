@@ -1,0 +1,48 @@
+@import '/style/components/alert.css';
+@import '/style/components/input.css';
+@import '/style/components/status.css';
+@import '/style/components/task.css';
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+body > * {
+    flex: 1;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+*[hidden] {
+    display: none;
+}
+
+pre {
+    tab-size: 4;
+}
+
+*[data-correct], *[data-correct] * {
+    color: #5dcf5d!important;
+}
+
+*[data-incorrect], *[data-incorrect] * {
+    color: red!important;
+}
+
+.done, .done * {
+    color: #3f813f!important;
+}
+
+*[data-tab] {
+    color: grey;
+}

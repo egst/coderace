@@ -1,0 +1,8 @@
+.crace-task {
+    display: block;
+    margin: 0;
+    padding: 16px;
+    background-color: #444;
+    color: white;
+    font-family: monospace;
+}

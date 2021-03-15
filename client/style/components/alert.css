@@ -1,0 +1,22 @@
+.crace-alert {
+    display: block;
+    padding: 16px;
+    color: white;
+    font-family: monospace;
+}
+
+.crace-alert:empty {
+    padding: 0;
+}
+
+.crace-alert.info {
+    background-color: #5858dd;
+}
+
+.crace-alert.warn {
+    background-color: #ffc355;
+}
+
+.crace-alert.error {
+    background-color: #ff4b4b;
+}

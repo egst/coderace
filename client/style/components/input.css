@@ -1,0 +1,13 @@
+.crace-input {
+    display: block;
+    margin: 0;
+    flex: 1;
+    padding: 16px;
+    background-color: #222;
+    color: white;
+    font-family: monospace;
+}
+
+.crace-input:focus {
+    outline: 0;
+}
