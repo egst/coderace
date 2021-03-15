@@ -193,8 +193,10 @@ const respond = async (request: ServerRequest): Promise<Response> => {
     }
 
     if (params.action == 'progress') {
-        const cookies = getCookies(request)
-        const player  = getPlayer(cookies.playerName)
+        //const cookies = getCookies(request)
+        //const player  = getPlayer(cookies.playerName)
+        console.log(params)
+        const player = getPlayer(String(params.playerName))
 
         if (player == null)
             return errorResponse(HTTPStatus.BadRequest, 'not joined')

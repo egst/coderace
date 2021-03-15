@@ -155,7 +155,7 @@ export class Status extends HTMLElement {
     }
 
     async sendProgress (correct) {
-        const response = await api.progress({progress: correct})
+        await api.progress({playerName: window.cookies.playerName, progress: correct})
     }
 }
 
